@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import BAR from "./src/screens/ProgessBar";
 import TodoScreen from "./src/screens/TodoScreen";
+import InicioApp from "./src/components/ButtonFull";
 
 
 const Stack = createNativeStackNavigator();

@@ -12,30 +12,30 @@ const BAR = () => {
   useEffect(() => {
     if (progress < 1) {
       const timer = setTimeout(() => {
-        setProgress(progress + 0.1); // Aumenta el progreso en 0.1 cada segundo
+        setProgress(progress + 0.1); 
       }, 500);
-      return () => clearTimeout(timer); // Limpia el timer al desmontar
+      return () => clearTimeout(timer); 
     } else {
-      onComplete(); // Habilita el botón cuando el progreso llega al 100%
+      onComplete(); 
     }
-  }, [progress]);// Este useEffect solo se ejecuta una vez al montar el componente
+  }, [progress]);
 
-  // Ejecutar la función onComplete cuando el progreso llegue al 100%
+
   useEffect(() => {
     if (progress === 1) {
-      onComplete();  // Ejecuta la función onComplete cuando el progreso llegue al 100%
+      onComplete(); 
     }
-  }, [progress]); // Se ejecuta cada vez que 'progress' cambia
+  }, [progress]);
 
-  // Función que se ejecutará cuando el progreso llegue al 100%
+
   const onComplete = () => {
-    StatusBar.setHidden(true);  // Ocultar la barra de estado
-    navigation.navigate('ToDo'); // Navegar a la pantalla "ToDo"
+    StatusBar.setHidden(true); 
+    navigation.navigate('ToDo'); 
   };
 
   return (
     <View style={styles.container}>
-      <Text>Cargando . . .</Text>
+      <Text>Cargando</Text>
       <Progress.Bar progress={progress} width={200} />
       </View>
   );
